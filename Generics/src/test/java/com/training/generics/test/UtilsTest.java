@@ -108,4 +108,18 @@ class UtilsTest {
 		Utils.fill(integers, 5);
 		assertThat(integers, contains(now, 1, 2, 3, 4, 5, "last", 1, 2, 3, 4, 5));				
 	}
+	
+	@Test
+	void reverseListTest() {
+		List<Integer> integers=new ArrayList<>(10);
+		
+		for (int idx=0; idx<10; idx++) {
+			integers.add(idx);
+		}
+		Utils.reverse(integers);
+		
+		assertThat(integers, contains(9, 8, 7, 6, 5, 4, 3, 2, 1, 0));
+		
+	}
+	
 }

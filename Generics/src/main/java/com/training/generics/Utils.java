@@ -1,5 +1,6 @@
 package com.training.generics;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -95,6 +96,15 @@ public class Utils {
 	public static void fill(List<? super Integer> nums, int n) {
 		for (int idx=1; idx<=n; idx++) {
 			nums.add(idx);
+		}
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static <T> void reverse(List<T> list) {
+		T[] array=(T[]) list.toArray();
+		
+		for (int idx=0; idx<list.size(); idx++) {
+			list.set(idx, array[list.size()-idx-1]);
 		}
 	}
 }
